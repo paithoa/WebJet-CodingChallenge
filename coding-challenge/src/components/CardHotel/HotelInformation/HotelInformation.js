@@ -18,8 +18,8 @@ const HotelInformation = (props) => {
   return (
     <div className={styles.HotelInfo}>
       <h3 className={styles.Name}>{props.name}</h3>
-      {diamonds}
-      {halfDiamonds}
+      {stars}
+      {partialStars}
       <p className={styles.RoomType}>
         <strong>Type:</strong> {props.roomType}
       </p>

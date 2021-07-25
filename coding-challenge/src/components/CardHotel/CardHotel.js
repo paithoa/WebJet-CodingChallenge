@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HotelCard.module.css";
+import styles from "./CardHotel.module.css";
 import HotelInformation from "./HotelInformation/HotelInformation";
 
 const CardHotel = (props) => {
