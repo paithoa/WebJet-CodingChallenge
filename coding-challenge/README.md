@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Webjet Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Written in React Functional and Class components
+
+# Assumptions
+
+1. Message error returned when not showing any filters
+2. wildcard on search filter functionality not added
+3. when filter x is clicked it filter x and x.5
 
 ## Available Scripts
 
