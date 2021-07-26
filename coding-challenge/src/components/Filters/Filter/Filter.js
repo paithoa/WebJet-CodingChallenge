@@ -1,30 +1,41 @@
-import React, { Component } from "react";
-import styles from "./Filters.module.css";
-import Filter from "./Filter/Filter";
+import React from "react";
+import styles from "./Filter.module.css";
 
-class Filters extends Component {
-  state = {
-    filterNames: ["Hotel Name", "Quality Rating"],
-  };
+import TextInput from "../../UI/TextInput/TextInput";
+import CheckBox from "../../UI/CheckBox/CheckBox";
 
-  render() {
-    const filters = this.state.filterNames.map((filter, i) => {
-      return (
-        <Filter
-          filter={filter}
-          key={i}
-          ratingFilters={this.props.ratingFilters}
-          filterChanged={this.props.filterChanged}
-        />
+const filter = (props) => {
+  let inputElement = null;
+  switch (props.filter) {
+    case "Hotel Name":
+      inputElement = (
+        <TextInput type={props.filter} filterHandler={props.filterChanged} />
       );
-    });
-    return (
-      <div className={styles.Filters}>
-        <h4>Filter Results</h4>
-        {filters}
-      </div>
-    );
+      break;
+    case "Quality Rating":
+      const ratingFilters = [...props.ratingFilters];
+      inputElement = ratingFilters.map((ratingFilter, i) => {
+        return (
+          <CheckBox
+            key={i}
+            identifier={i}
+            type={props.filter}
+            filterHandler={props.filterChanged}
+            ratingFilter={Object.keys(ratingFilter)[0]}
+            checked={ratingFilter[Object.keys(ratingFilter)[0]]}
+          />
+        );
+      });
+      break;
+    default:
+      return;
   }
-}
+  return (
+    <div className={styles.Filter}>
+      <h5 className={styles.Heading}>{props.filter}</h5>
+      {inputElement}
+    </div>
+  );
+};
 
-export default Filters;
+export default filter;

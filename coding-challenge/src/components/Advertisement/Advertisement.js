@@ -1,7 +1,7 @@
 import React from "react";
 import advertisement from "../../assets/ad.png";
 
-import styles from "./Ad.module.css";
+import styles from "./Advertisement.module.css";
 
 const Advertisement = () => (
   <div className={styles.Ad}>

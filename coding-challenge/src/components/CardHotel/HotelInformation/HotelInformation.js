@@ -8,12 +8,12 @@ const HotelInformation = (props) => {
 
   // logos to represent rating
   stars = [...Array(rating)].map((_, i) => {
-    return <div className={styles.stars} key={i}></div>;
+    return <div className={styles.Diamond} key={i}></div>;
   });
 
   //Half logos in case of decimal points in rating
   if (props.rating % 1 > 0) {
-    partialStars = <div className={styles.partialStars}></div>;
+    partialStars = <div className={styles.HalfDiamond}></div>;
   }
   return (
     <div className={styles.HotelInfo}>
